@@ -21,20 +21,22 @@ int main() {
             tempStr +=inputSentence[counter];
         }
     }
+    cout<<"["<<tempStr.length()<<"] "<<tempStr<<endl;
 
 // Version 2
 
     cout<<"------------Version 2 char [ ]--------------\n";
-    char sentenceArray [inputSentence.length()+1];
+    char sentenceArray [inputSentence.length()];
     strcpy(sentenceArray, inputSentence.c_str());
     tempStr = "";
     for(int counter = 0; counter < sizeof(sentenceArray); counter++) {
-        if(sentenceArray[counter] == '-') {
+        if(*(sentenceArray+counter) == '-') {
             cout<<"["<<tempStr.length()<<"] "<<tempStr<<endl;
             tempStr ="";
         } else {
-            tempStr +=sentenceArray[counter];
+            tempStr += *(sentenceArray+counter);
         }
     }
     // cout<<sizeof(sentenceArray)<<endl;
+    cout<<"["<<tempStr.length()<<"] "<<tempStr<<endl;
 }
